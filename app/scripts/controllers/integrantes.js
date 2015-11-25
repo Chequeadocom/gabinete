@@ -12,10 +12,14 @@ angular.module('gabineteApp')
 
   		$scope.sector = $routeParams.sector;
 
+  		$scope.loading = true;
+
 		TabletopService.getDataSector($routeParams.sector).then(function(info){
          	$scope.cargos = _.groupBy(info.elements,function(e){
          		return e.grupo;
          	});
+
+         	$scope.loading = false;
 
         });
 
