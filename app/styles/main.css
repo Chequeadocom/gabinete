@@ -489,6 +489,7 @@
     overflow: hidden;
     text-align: center;
     background-color: rgba(214, 224, 226, 0.2);
+    min-height: 324px;
 }
 
 .card.hovercard .cardheader {
@@ -561,3 +562,13 @@
     margin-bottom: 17px;
 }
 
+.row-centered {
+    text-align:center;
+}
+    
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}

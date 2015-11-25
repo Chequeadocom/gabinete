@@ -1,12 +1,12 @@
 <h1>{{sector}}</h1>
 
-<div class="row" ng-repeat="(key, personas) in cargos">
+<div class="row row-centered" ng-repeat="(key, personas) in cargos">
   
   <div class="col-xs-12">
     <h2>{{key}}</h2>
   </div>
 
-  <div class="col-lg-3 col-sm-6" ng-class="{}" ng-repeat="(key, p) in personas">
+  <div class="col-lg-3 col-sm-6 col-centered" ng-class="{ }" ng-repeat="(key, p) in personas">
 
       <div class="card hovercard">
           <div class="cardheader" ng-class="{ available: (p.entrante=='') }">
