@@ -1,0 +1,40 @@
+<h1>{{sector}}</h1>
+
+<div class="row" ng-repeat="(key, personas) in cargos">
+  
+  <div class="col-xs-12">
+    <h2>{{key}}</h2>
+  </div>
+
+  <div class="col-lg-3 col-sm-6" ng-class="{}" ng-repeat="(key, p) in personas">
+
+      <div class="card hovercard">
+          <div class="cardheader" ng-class="{ available: (p.entrante=='') }">
+            
+          </div>
+          <div class="avatar">
+              <img alt="" ng-src="{{p.foto || 'https://upload.wikimedia.org/wikipedia/commons/3/33/White_square_with_question_mark.png' }}">
+          </div>
+          <div class="info">
+              <div class="title">
+                  <a>{{p.entrante || 'Indefinido'}}</a>
+              </div>
+              <div class="desc">{{p.cargo}}</div>
+              <div class="desc" ng-if="p.saliente">Reemplaza a: <strong>{{p.saliente}}</strong></div>
+              <div class="desc" ng-if="!p.saliente">Es un nuevo cargo</div>
+          </div>
+          <div class="bottom">
+              <a ng-if="p.confirmacion" class="btn btn-primary btn-sm" target="_blank" href="{{p.confirmacion}}">
+                  Confirmación oficial
+              </a>
+              <a ng-if="p.chequeos" class="btn btn-warning btn-sm" target="_blank" href="{{p.chequeos}}">
+                  Chequeos
+              </a>
+          </div>
+      </div>
+
+  </div>
+
+
+</div>
+
