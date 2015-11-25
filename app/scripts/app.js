@@ -25,7 +25,7 @@ angular
         controllerAs: 'main'
       })
       .otherwise({
-        redirectTo: '/integrantes/Nación'
+        redirectTo: '/integrantes/Gabinete nacional confirmado'
       });
   })
   .service('TabletopService', function ($q) {
