@@ -1,11 +1,16 @@
-# gabinete
+# Gabinete Chequeado
+
+Integrantes de los gabinetes
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.14.0.
 
-## Build & development
+## development
+Run `npm install` and `bower install` for dependencies.
+Run `grunt serve` for preview and live-reloading in http://localhost:10000
 
-Run `grunt` for building and `grunt serve` for preview.
+## Build
+Run `grunt build` and production files will be places in /dist
 
 ## Testing
 
