@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .chart-container *{
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -520,25 +526,37 @@
 }
 
 .card.hovercard .avatar {
+    top:-50px;
     position: relative;
-    top: -50px;
-    margin-bottom: -50px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto -40px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0,0,0,.2), 0 1px 3px 3px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0,0,0,.2), 0 1px 3px 3px rgba(0,0,0,.1);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(0,0,0,.2), 0 1px 3px 3px rgba(0,0,0,.1);
 }
 
 .card.hovercard .avatar img {
-    width: 100px;
-    height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    border: 5px solid rgba(255,255,255,0.5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.card.hovercard .avatar img.portrait {
+    width: 100%;
+    height: auto;
 }
 
 .card.hovercard .info {
     padding: 4px 8px 10px;
 }
+
 
 .card.hovercard .info .title {
     margin-bottom: 4px;
@@ -556,6 +574,9 @@
     text-overflow: ellipsis;
     min-height: 40px;
 }
+
+.card.hovercard .info .desc.ng-scope { text-transform: uppercase; font-size:11px; }
+.card.hovercard .info .desc strong { text-transform:initial; display:block; font-size:12px; }
 
 .card.hovercard .bottom {
     padding: 0 20px;
