@@ -14,14 +14,14 @@
 
       <div class="card hovercard">
           <div class="cardheader" ng-class="{ available: (p.entrante=='') }">
-            
+
           </div>
           <div class="avatar">
               <img alt="" ng-src="{{p.foto || 'https://upload.wikimedia.org/wikipedia/commons/3/33/White_square_with_question_mark.png' }}" class="portrait">
           </div>
           <div class="info">
               <div class="title">
-                  <a>{{p.entrante || 'Indefinido'}}</a>
+                  <h3>{{p.entrante || 'Indefinido'}}</h3>
               </div>
               <div class="desc">{{p.cargo}}</div>
               <div class="desc" ng-if="p.saliente">Reemplaza a: <strong>{{p.saliente}}</strong></div>

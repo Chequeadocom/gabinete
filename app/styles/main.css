@@ -498,11 +498,9 @@ body {
     overflow: hidden;
     text-align: center;
     background-color: #fff;
-    min-height: 324px;
+    min-height: 299px;
     border-radius: 4px;
-    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(0,0,0,.05), 0 1px 2px 2px rgba(0,0,0,.05);
-    -moz-box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(0,0,0,.05), 0 1px 2px 2px  rgba(0,0,0,.05);
-    box-shadow: 0 0 0 1px #fff, 0 0 0 2px rgba(0,0,0,.05), 0 1px 2px 2px  rgba(0,0,0,.05);
+    box-shadow: 0 1px 3px rgba(26,53,71,.08), 0 0 0 1px rgba(26,53,71,.04), 0 1px 1px rgba(26,53,71,.06)
 }
 
 .card.hovercard .cardheader {
@@ -554,13 +552,16 @@ body {
     padding: 4px 8px 10px;
 }
 
-
 .card.hovercard .info .title {
     margin-bottom: 4px;
     font-size: 24px;
     line-height: 1;
     color: #262626;
     vertical-align: middle;
+}
+
+.card.hovercard .info .title h3 {
+  margin:0;
 }
 
 .card.hovercard .info .desc {
@@ -581,9 +582,29 @@ body {
 }
 
 .card.hovercard .bottom {
-    padding: 0 20px;
-    margin-bottom: 17px;
+    padding: 0;
+    border-top: 1px solid #e4e4e4;
+    background-color: #fcfcfc;
+    -webkit-box-shadow: inset 0px 1px 1px -1px rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0px 1px 1px -1px rgba(0,0,0,.1);
+    box-shadow: inset 0px 1px 1px -1px rgba(0,0,0,.1);
 }
+
+.card.hovercard .bottom a.btn {
+  background-color: transparent !important;
+  border: none;
+  width: 49%;
+  padding: 12px 0;
+  border-radius: 0;
+}
+.card.hovercard .bottom a.btn:active { box-shadow: none;}
+.card.hovercard .bottom a.btn:not(:first-child) {
+  border-left: 1px solid #e4e4e4;
+}
+.btn.btn-primary { color:#337ab7; }
+.btn.btn-primary:hover { color:#286090; }
+.btn.btn-warning { color:#ec971f; }
+.btn.btn-warning:hover { color:#d58512; }
 
 .row-centered {
     text-align:center;
