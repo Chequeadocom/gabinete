@@ -10,8 +10,8 @@
 angular.module('gabineteApp')
   .controller('MenuCtrl', function ($scope,TabletopService) {
 
-		TabletopService.getDataOptions().then(function(info){
-			$scope.options = info;
+		TabletopService.getData().then(function(info){
+			$scope.options = info.keys;
         });
 
   });

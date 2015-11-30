@@ -10,12 +10,19 @@
 angular.module('gabineteApp')
   .controller('IntegrantesCtrl', function ($scope,TabletopService,$routeParams) {
 
-  		$scope.sector = $routeParams.sector;
+      $scope.sector = '';
 
   		$scope.loading = true;
 
-		TabletopService.getDataSector($routeParams.sector).then(function(info){
-         	$scope.cargos = _.groupBy(info.elements,function(e){
+		TabletopService.getData().then(function(info){
+
+          if($routeParams.sector && info.data[$routeParams.sector]){
+            $scope.sector = $routeParams.sector;
+          } else {
+            $scope.sector = _.values(info.keys)[0];
+          }
+
+         	$scope.cargos = _.groupBy(info.data[$scope.sector].elements,function(e){
          		return e.grupo;
          	});
 

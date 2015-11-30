@@ -19,17 +19,23 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'views/integrantes.html',
+        controller: 'IntegrantesCtrl',
+        controllerAs: 'main'
+      })
       .when('/integrantes/:sector', {
         templateUrl: 'views/integrantes.html',
         controller: 'IntegrantesCtrl',
         controllerAs: 'main'
       })
       .otherwise({
-        redirectTo: '/integrantes/Gabinete nacional confirmado'
+        redirectTo: '/'
       });
   })
   .service('TabletopService', function ($q) {
 
+    this.keys = false;
     this.data = false;
     this.loading = false;
 
@@ -49,35 +55,32 @@ angular
       });
     },
 
-    this.getDataSector = function(sector){
-      var that = this;
-      return $q(function(resolve, reject) {
-        that.getData().then(function(data){
-          if(data[sector]){
-            resolve(data[sector]);
-          }
-        });
-      });
-    },
-
     this.getData = function(){
       var that = this;
       return $q(function(resolve, reject) {
         if(!that.data){
 //          if(!that.loading){
             that.loading = true;
-            Tabletop.init( { key: '1MGKBNtMQKpgm4d06j2umafrh3C3nf_gxzuX3iUkJyOs',
+            Tabletop.init( { 
+                key: '1MGKBNtMQKpgm4d06j2umafrh3C3nf_gxzuX3iUkJyOs', //PROD
+                //key:'1c-ENCz0R139Tqnwei0BPligzlb9FGKFGL89x2SIiHnU', //TEST
                     callback: function(data, tabletop) {
                       that.data = data;
-                      resolve(angular.copy(that.data));
+                      that.keys = _.reduce(data, function(total, value, key) {
+                        if(value.elements.length>0){
+                            total.push(key);
+                        }
+                        return total;
+                      },[]);
                       that.loading = false;
+                      resolve({data:that.data,keys:that.keys});
                     },
                     simpleSheet: false,
                     parseNumbers: true
                   });            
          // }
         } else {
-          resolve(that.data);
+          resolve({data:that.data,keys:that.keys});
         }
       });
     };
