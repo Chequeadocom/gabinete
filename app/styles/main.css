@@ -591,7 +591,6 @@ body {
 }
 
 .card.hovercard .bottom a.btn {
-  background-color: transparent !important;
   border: none;
   width: 49%;
   padding: 12px 0;
@@ -601,10 +600,9 @@ body {
 .card.hovercard .bottom a.btn:not(:first-child) {
   border-left: 1px solid #e4e4e4;
 }
-.btn.btn-primary { color:#337ab7; }
-.btn.btn-primary:hover { color:#286090; }
-.btn.btn-warning { color:#ec971f; }
-.btn.btn-warning:hover { color:#d58512; }
+
+.btn.btn-primary:hover { color:#fff; }
+.btn.btn-warning:hover { color:#fff; }
 
 .row-centered {
     text-align:center;
