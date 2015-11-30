@@ -601,8 +601,6 @@ body {
   border-left: 1px solid #e4e4e4;
 }
 
-.btn.btn-primary:hover { color:#fff; }
-.btn.btn-warning:hover { color:#fff; }
 
 .row-centered {
     text-align:center;
@@ -618,6 +616,20 @@ body {
 .navbar-logo img {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+    .col-centered{
+         width: 95%;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) { 
+    .col-centered{
+         width: 50%;
+    }
+
 }
 
 /* Loader */
