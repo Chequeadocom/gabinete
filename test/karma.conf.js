@@ -34,6 +34,7 @@ module.exports = function(config) {
       'bower_components/tabletop/src/tabletop.js',
       'bower_components/pym.js/dist/pym.js',
       'bower_components/lodash/lodash.js',
+      'bower_components/angular-slugify/angular-slugify.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

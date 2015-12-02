@@ -17,7 +17,7 @@ angular.module('gabineteApp')
 		TabletopService.getData().then(function(info){
 
           if($routeParams.sector && info.data[$routeParams.sector]){
-            $scope.sector = $routeParams.sector;
+            $scope.sector = info.keys[$routeParams.sector];
           } else {
             $scope.sector = _.values(info.keys)[0];
           }
