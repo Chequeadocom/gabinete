@@ -632,6 +632,13 @@ body {
 
 }
 
+#gabinete {
+    color: black;
+    padding-bottom: 15px;
+    pointer-events: none;
+    cursor: default;
+}
+
 /* Loader */
 .loader {
   font-size: 90px;
