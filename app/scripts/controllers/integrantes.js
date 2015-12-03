@@ -8,23 +8,21 @@
  * Controller of the gabineteApp
  */
 angular.module('gabineteApp')
-  .controller('IntegrantesCtrl', function ($scope,TabletopService,$routeParams) {
-
-      $scope.sector = '';
+  .controller('IntegrantesCtrl', function ($scope,TabletopService,$routeParams,Slug) {
 
   		$scope.loading = true;
 
-		TabletopService.getData().then(function(info){
+		  TabletopService.getData().then(function(info){
 
-          if($routeParams.sector && info.data[$routeParams.sector]){
-            $scope.sector = info.keys[$routeParams.sector];
+          if($routeParams.persona && info.keys[Slug.slugify($routeParams.persona)]){
+            $scope.persona = info.keys[Slug.slugify($routeParams.persona)];
           } else {
-            $scope.sector = _.values(info.keys)[0];
+            $scope.persona = _.values(info.keys)[0];
           }
 
-         	$scope.cargos = _.groupBy(info.data[$scope.sector].elements,function(e){
-         		return e.grupo;
-         	});
+          $scope.cargos = _.groupBy(info.data[$scope.persona].elements,function(e){
+            return e.grupo;
+          });
 
          	$scope.loading = false;
 

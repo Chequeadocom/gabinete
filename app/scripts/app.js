@@ -25,7 +25,7 @@ angular
         controller: 'IntegrantesCtrl',
         controllerAs: 'main'
       })
-      .when('/gabinete/:sector', {
+      .when('/integrantes/:persona', {
         templateUrl: 'views/integrantes.html',
         controller: 'IntegrantesCtrl',
         controllerAs: 'main'
@@ -51,12 +51,12 @@ angular
                 //key:'1c-ENCz0R139Tqnwei0BPligzlb9FGKFGL89x2SIiHnU', //TEST
                     callback: function(data, tabletop) {
                       that.data = data;
-                      that.keys = _.reduce(data, function(total, value, key) {
-                        if(value.elements.length>0){
-                            total[Slug.slugify(key)] = key;
+                      that.keys = {};
+                      _.each(tabletop.foundSheetNames, function(e) {
+                        if(data[e].elements.length>0){
+                            that.keys[Slug.slugify(e)] = e;
                         }
-                        return total;
-                      },{});
+                      });
                       that.loading = false;
                       resolve({data:that.data,keys:that.keys});
                     },
