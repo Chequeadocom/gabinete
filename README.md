@@ -17,5 +17,5 @@ versión 0.14.0.
 `grunt serve` 
 
 ###Compilar el código y generar /dist
-Run `grunt build` and production files will be places in /dist
+`grunt build`
 
