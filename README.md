@@ -1,7 +1,9 @@
 # Gabinete Chequeado
 
+![Sitio Chequeado Gabinete](/chequeado_gabinete.jpg?raw=true "Chequeado Gabinete")
+
 ##Introducción
-Esta herramienta permite crear un conjunto de tarjetas mostradas (en este caso funcionarios argentinos) en forma jerárquica.
+Esta herramienta permite crear un conjunto de tarjetas mostradas (en este caso funcionarios argentinos) en forma jerárquica. Se puede ver online en [chequeado gabinete](https://chequeado.com/gabinete)
 
 El proyecto fue desarrollado utilizando [yo angular generator](https://github.com/yeoman/generator-angular)
 versión 0.14.0.
