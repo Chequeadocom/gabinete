@@ -13,7 +13,8 @@
     "tabletop": "~1.4.2",
     "pym.js": "~0.4.5",
     "lodash": "~3.10.1",
-    "angular-slugify": "~1.0.1"
+    "angular-slugify": "~1.0.1",
+    "d3": "^5.16.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

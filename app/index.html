@@ -41,7 +41,7 @@
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
             <ul class="nav navbar-nav" ng-controller="MenuCtrl" ng-cloak>
               <li><a id="gabinete" href="javascript:void(0)">Gabinete de:</a></li>
-              <li ng-repeat="(key,opt) in options"><a href="#/integrantes/{{key}}">{{opt}}</a></li>
+              <li ng-repeat="(key,opt) in options"><a href="#!/integrantes/{{key}}">{{opt}}</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="http://chequeado.com"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Volver a chequeado.com</a></li>
@@ -109,6 +109,7 @@
     <script src="bower_components/pym.js/dist/pym.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-slugify/angular-slugify.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
